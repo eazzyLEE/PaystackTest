@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+  <link rel="stylesheet" href="https://rawgit.com/angular-slider/angularjs-slider/master/dist/rzslider.css">
+
+  <script src="https://rawgit.com/rzajac/angularjs-slider/master/dist/rzslider.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <title>Paystack test</title>
+</head>
+
+<body>
+
+  <div class="container-fluid text-center mx-auto">
+    <div ng-controller="MainCtrl as vm">
+      <h3 class="text-center">Share of Revenue</h3>
+      <!--<p>Price: {{vm.priceSlider1.value}}</p>-->
+      <tabset>
+        <tab class="ml-3 mr-3" select="vm.refreshSlider()">
+          <rzslider rz-slider-model="vm.priceSlider1.value" rz-slider-floor="vm.priceSlider1.floor" rz-slider-ceil="vm.priceSlider1.ceil"></rzslider>
+          <br />
+          <p>Your top {{ vm.priceSlider1.value }} paying customers brought in
+            <b>~{{ rate }}%</b> of your revenue between January, 2017 till date.
+          </p>
+        </tab>
+
+
+      </tabset>
+
+      <!--<rzslider rz-slider-model="priceSlider.value" rz-slider-options="priceSlider.options"></rzslider>-->
+    </div>
+  </div>
+</body>
+
+</html>
